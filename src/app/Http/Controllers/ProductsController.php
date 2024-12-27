@@ -22,7 +22,7 @@ class ProductsController extends Controller
     }
 
     //登録ボタンを押下後、DBにデータを追加して商品一覧画面に戻る
-    public function create(Request $request)
+    public function create(ProductsRequest $request)
     {
         $form = $request->all();
         Product::create($form);

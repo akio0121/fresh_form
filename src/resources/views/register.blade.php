@@ -37,7 +37,9 @@
                             <input type="text" name="name" placeholder="商品名を入力" />
                         </div>
                         <div class="form__error">
-                            <!--バリデーション機能を実装したら記述します。-->
+                            @error('name')
+                            {{ $message }}
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -48,10 +50,12 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--text">
-                            <input type="email" name="price" placeholder="値段を入力" />
+                            <input type="text" name="price" placeholder="値段を入力" />
                         </div>
                         <div class="form__error">
-                            <!--バリデーション機能を実装したら記述します。-->
+                            @error('price')
+                            {{ $message }}
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -61,14 +65,7 @@
                         <span class="form__label--required">必須</span>
                     </div>
                 </div>
-                <div class="form__group-content">
-                    <div class="form__input--file">
-                        <form method="POST" action="/" enctype="multipart/form-data">
-                            @csrf
-                            <input type="file" name="image">
-                        </form>
-                    </div>
-                </div>
+
                 <div class="form__group">
                     <div class="form__group-title">
                         <span class="form__label--item">季節</span>
@@ -83,6 +80,11 @@
                             <input type="radio" name="winter" value=4>冬
                         </div>
                     </div>
+                    <div class="form__error">
+                        @error('price')
+                        {{ $message }}
+                        @enderror
+                    </div>
                 </div>
                 <div class="form__group">
                     <div class="form__group-title">
@@ -91,8 +93,13 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--textarea">
-                            <textarea name="content" placeholder="商品の説明を入力"></textarea>
+                            <textarea name="description" placeholder="商品の説明を入力"></textarea>
                         </div>
+                    </div>
+                    <div class="form__error">
+                        @error('description')
+                        {{ $message }}
+                        @enderror
                     </div>
                 </div>
 

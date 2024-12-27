@@ -39,7 +39,6 @@
         </div>
     </header>
 
-    <div class="flex">
         @foreach($products as $product)
         <div class="product__card">
             <div class=" product__img">
@@ -53,7 +52,6 @@
             </div>
         </div>
         @endforeach
-    </div>
     {{ $products->links() }}
 </body>
 
