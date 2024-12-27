@@ -11,7 +11,7 @@ class ProductsController extends Controller
     //商品一覧画面の表示
     public function products()
     {
-        $products = Product::all();
+        $products = Product::Paginate(6);
         return view('products', ['products' => $products]);
     }
 
@@ -19,5 +19,13 @@ class ProductsController extends Controller
     public function register()
     {
         return view('register');
+    }
+
+    //登録ボタンを押下後、DBにデータを追加して商品一覧画面に戻る
+    public function create(Request $request)
+    {
+        $form = $request->all();
+        Product::create($form);
+        return redirect('/');
     }
 }

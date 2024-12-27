@@ -8,4 +8,4 @@ use App\Models\Product;
 
 Route::get('/', [ProductsController::class, 'products']);
 Route::get('/register', [ProductsController::class, 'register']);
-Route::post('/register', [RegisterController::class, 'create']);
+Route::post('/register', [ProductsController::class, 'create']);

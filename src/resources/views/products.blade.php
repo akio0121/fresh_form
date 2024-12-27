@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="{{ asset('css/products.css') }}" />
 </head>
 
+<style>
+    svg.w-5.h-5 {
+        /*paginateメソッドの矢印の大きさ調整のために追加*/
+        width: 30px;
+        height: 30px;
+    }
+</style>
+
 <body>
     <header class="header">
         <div class="header__inner">
@@ -30,21 +38,23 @@
             </div>
         </div>
     </header>
-    @foreach($products as $product)
-    <div class="flex__item">
-        <div class="product__card"></div>
-        <div class="product__img">
-            <img src="/storage/{{$product->image}}" alt="" />
+
+    <div class="flex">
+        @foreach($products as $product)
+        <div class="product__card">
+            <div class=" product__img">
+                <img src="/storage/{{$product->image}}" alt="" />
+            </div>
+            <div class="product__name">
+                {{$product->name}}
+            </div>
+            <div class="product__price">
+                ￥{{$product->price}}
+            </div>
         </div>
-        <div class="product__name">
-            {{$product->name}}
-        </div>
-        <div class="product__price">
-            ￥{{$product->price}}
-        </div>
+        @endforeach
     </div>
-    </div>
-    @endforeach
+    {{ $products->links() }}
 </body>
 
 </html>

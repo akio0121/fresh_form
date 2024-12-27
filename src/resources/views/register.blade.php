@@ -25,7 +25,7 @@
             <div class="register-form__heading">
                 <h2>商品登録</h2>
             </div>
-            <form action="/" method="post">
+            <form action="/register" method="post">
                 @csrf
                 <div class="form__group">
                     <div class="form__group-title">
@@ -97,9 +97,9 @@
                 </div>
 
                 <div class="form__button">
-                    <button class="form__button-back" type="button" onClick="history.back()">戻る
+                    <button class="form__button-back" type="submit" onClick="history.back()">戻る
                     </button>
-                    <button class="form__button-register" type="button">登録</button>
+                    <button class="form__button-register" type="submit">登録</button>
                 </div>
             </form>
         </div>
