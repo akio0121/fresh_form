@@ -9,3 +9,4 @@ use App\Models\Product;
 Route::get('/', [ProductsController::class, 'products']);
 Route::get('/register', [ProductsController::class, 'register']);
 Route::post('/register', [ProductsController::class, 'create']);
+Route::get('/search', [ProductsController::class, 'search']);
