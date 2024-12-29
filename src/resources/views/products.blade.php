@@ -39,19 +39,19 @@
         </div>
     </header>
 
-        @foreach($products as $product)
-        <div class="product__card">
-            <div class=" product__img">
-                <img src="/storage/{{$product->image}}" alt="" />
-            </div>
-            <div class="product__name">
-                {{$product->name}}
-            </div>
-            <div class="product__price">
-                ￥{{$product->price}}
-            </div>
+    @foreach($products as $product)
+    <div class="product__card">
+        <div class=" product__img">
+            <img src="/storage/{{$product->image}}" alt="" />
         </div>
-        @endforeach
+        <div class="product__name">
+            {{$product->name}}
+        </div>
+        <div class="product__price">
+            ￥{{$product->price}}
+        </div>
+    </div>
+    @endforeach
     {{ $products->links() }}
 </body>
 
