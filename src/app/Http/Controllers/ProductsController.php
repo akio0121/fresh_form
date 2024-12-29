@@ -33,7 +33,6 @@ class ProductsController extends Controller
     {
         $form = $request->all();
         Product::create($form);
-        //DB書き込みをコメントアウト
         /*Productseason::create($form);*/
         return redirect('/');
     }
