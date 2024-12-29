@@ -65,49 +65,58 @@
                         <span class="form__label--required">必須</span>
                     </div>
                 </div>
-
-                <div class="form__group">
-                    <div class="form__group-title">
-                        <span class="form__label--item">季節</span>
-                        <span class="form__label--required">必須</span>
-                        <span class="form__label--multiple">複数選択可</span>
-                    </div>
-                    <div class="form__group-content">
-                        <div class="form__input--radio">
-                            <input type="radio" name="spring" value=1>春
-                            <input type="radio" name="summer" value=2>夏
-                            <input type="radio" name="autumn" value=3>秋
-                            <input type="radio" name="winter" value=4>冬
-                        </div>
+                <div class="form__group-content">
+                    <div class="form__select--image">
+                        <input type="file" name="image">
                     </div>
                     <div class="form__error">
-                        @error('price')
+                        @error('image')
                         {{ $message }}
                         @enderror
                     </div>
-                </div>
-                <div class="form__group">
-                    <div class="form__group-title">
-                        <span class="form__label--item">商品説明</span>
-                        <span class="form__label--required">必須</span>
-                    </div>
-                    <div class="form__group-content">
-                        <div class="form__input--textarea">
-                            <textarea name="description" placeholder="商品の説明を入力"></textarea>
+
+                    <div class="form__group">
+                        <div class="form__group-title">
+                            <span class="form__label--item">季節</span>
+                            <span class="form__label--required">必須</span>
+                            <span class="form__label--multiple">複数選択可</span>
+                        </div>
+                        <div class="form__group-content">
+                            <div class="form__input--radio">
+                                <input type="checkbox" name="season_id" value=1>春
+                                <input type="checkbox" name="season_id" value=2>夏
+                                <input type="checkbox" name="season_id" value=3>秋
+                                <input type="checkbox" name="season_id" value=4>冬
+                            </div>
+                        </div>
+                        <div class="form__error">
+                            @error('season_id')
+                            {{ $message }}
+                            @enderror
                         </div>
                     </div>
-                    <div class="form__error">
-                        @error('description')
-                        {{ $message }}
-                        @enderror
+                    <div class="form__group">
+                        <div class="form__group-title">
+                            <span class="form__label--item">商品説明</span>
+                            <span class="form__label--required">必須</span>
+                        </div>
+                        <div class="form__group-content">
+                            <div class="form__input--textarea">
+                                <textarea name="description" placeholder="商品の説明を入力"></textarea>
+                            </div>
+                        </div>
+                        <div class="form__error">
+                            @error('description')
+                            {{ $message }}
+                            @enderror
+                        </div>
                     </div>
-                </div>
 
-                <div class="form__button">
-                    <button class="form__button-back" type="submit" onClick="history.back()">戻る
-                    </button>
-                    <button class="form__button-register" type="submit">登録</button>
-                </div>
+                    <div class="form__button">
+                        <button class="form__button-back" type="button" onClick="history.back()">戻る
+                        </button>
+                        <button class="form__button-register" type="submit">登録</button>
+                    </div>
             </form>
         </div>
     </main>
