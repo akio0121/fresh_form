@@ -1,5 +1,5 @@
 .header {
-    background: #000;
+    background: #f3afaf;;
 }
 
 .header__inner {
@@ -69,6 +69,13 @@
 
 .form__input--textarea textarea {
     height: 180px;
+}
+
+.form__select--image,
+.form__input--radio {
+    padding: 10px;
+    width: 800px;
+    text-align: center;
 }
 
 .form__button {

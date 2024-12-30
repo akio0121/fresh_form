@@ -22,18 +22,13 @@ class ProductsController extends Controller
         return view('register');
     }
 
-    //商品検索画面の表示
-    public function search()
-    {
-        return view('search');
-    }
-
     //登録ボタンを押下後、DBにデータを追加して商品一覧画面に戻る
     public function create(ProductsRequest $request)
     {
         $form = $request->all();
         Product::create($form);
-        /*Productseason::create($form);*/
+        Productseason::create($form);
         return redirect('/');
     }
+
 }

@@ -28,9 +28,15 @@
                     <ul class="header-nav">
                         <li class="header-nav__item">
                             <a class="header-nav__link01" href="/register">＋商品を追加</a>
-                            <a class="header-nav__link02" href="/search">検索</a>
+                            <a class=" header-nav__link02" href="/search">検索</a>
+                            <div class="form__input--text">
+                                <input type="text" name="search" />
+                            </div>
                             <select class="price__item-select">
                                 <option value="">価格で並べ替え</option>
+                                <option value="">高い順に表示</option>
+                                <option value="">安い順に表示</option>
+
                             </select>
                         </li>
                     </ul>
@@ -42,7 +48,7 @@
     @foreach($products as $product)
     <div class="product__card">
         <div class=" product__img">
-            <img src="/storage/{{$product->image}}" alt="" />
+            <button><img src="/storage/{{$product->image}}" alt="" /></button>
         </div>
         <div class="product__name">
             {{$product->name}}
