@@ -28,16 +28,16 @@
                     <ul class="header-nav">
                         <li class="header-nav__item">
                             <a class="header-nav__link01" href="/register">＋商品を追加</a>
-                            <a class=" header-nav__link02" href="/search">検索</a>
-                            <div class="form__input--text">
-                                <input type="text" name="search" />
-                            </div>
                             <select class="price__item-select">
                                 <option value="">価格で並べ替え</option>
                                 <option value="">高い順に表示</option>
                                 <option value="">安い順に表示</option>
-
                             </select>
+                            <form class="form-inline" method="get" action="/search">
+                                @csrf
+                                <input type="text" name="searchword" value="{{$searchword ?? ''}}" placeholder="商品名で検索">
+                                <button type="submit" class="search-box">検索</button>
+                            </form>
                         </li>
                     </ul>
                 </nav>
@@ -48,7 +48,9 @@
     @foreach($products as $product)
     <div class="product__card">
         <div class=" product__img">
-            <button><img src="/storage/{{$product->image}}" alt="" /></button>
+            <form action="/productId" method="get">
+                <button type="submit"><img src="/storage/{{$product->image}}" alt="" /></button>
+            </form>
         </div>
         <div class="product__name">
             {{$product->name}}

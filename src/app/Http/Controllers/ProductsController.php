@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Models\Productseason;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProductsRequest;
 
@@ -27,8 +26,19 @@ class ProductsController extends Controller
     {
         $form = $request->all();
         Product::create($form);
-        Productseason::create($form);
         return redirect('/');
     }
 
+    //商品詳細画面の表示
+    public function productId()
+    {
+        return view('productId');
+    }
+
+    //検索画面の表示
+    public function search(Request $request)
+    {
+        $searchword = $request->searchword;
+        return view('/search',['searchword'=>$searchword]);
+    }
 }
